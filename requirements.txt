@@ -1,0 +1,7 @@
+streamlit
+langchain
+pypdf
+python-docx
+yagmail
+sqlite3
+python-dotenv
