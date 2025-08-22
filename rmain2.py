@@ -288,7 +288,7 @@ def parse_resume_to_json(resume_text: str) -> Dict[str, Any]:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o-mini",
             messages=[
                 {"role": "system", "content": "You are a resume parser that extracts structured information and returns it in JSON format."},
                 {"role": "user", "content": prompt}
@@ -555,4 +555,5 @@ if __name__ == "__main__":
 
 
  
+
 
