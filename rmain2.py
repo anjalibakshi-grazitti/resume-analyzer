@@ -121,7 +121,7 @@ def create_retriever(docs):
 
 def generate_feedback(resume_vectorstore, job_description_text, resume_name):
     retriever = resume_vectorstore.as_retriever(search_kwargs={"k": 5})
-    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
+    llm = ChatOpenAI(model="gpt-4o", temperature=0.1)
 
     prompt = f"""
 You are an expert HR professional and career advisor with 15+ years of experience in technical recruitment. 
@@ -288,7 +288,7 @@ def parse_resume_to_json(resume_text: str) -> Dict[str, Any]:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are a resume parser that extracts structured information and returns it in JSON format."},
                 {"role": "user", "content": prompt}
@@ -555,5 +555,6 @@ if __name__ == "__main__":
 
 
  
+
 
 
