@@ -6,12 +6,11 @@ from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain_community.chains import RetrievalQA
+from langchain.chains import RetrievalQA  # ✅ Correct import path
 import json
-from typing import Dict, List, Optional, Any
+from typing import Dict, List, Any
 import pandas as pd
 import re
-import time
 from datetime import datetime
 from pdfminer.high_level import extract_text
 
@@ -555,6 +554,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
