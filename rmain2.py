@@ -4,9 +4,11 @@ from dotenv import load_dotenv
 from openai import OpenAI
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
+
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.chains import RetrievalQA
+from langchain_openai import OpenAIEmbeddings
 
 import json
 from typing import Dict, List, Any
@@ -555,6 +557,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
