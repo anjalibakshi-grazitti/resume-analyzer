@@ -5,7 +5,7 @@ from openai import OpenAI
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
 from langchain.chains import RetrievalQA
 import json
 from typing import Dict, List, Optional, Any
@@ -555,6 +555,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
