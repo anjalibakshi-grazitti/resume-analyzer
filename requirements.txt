@@ -10,3 +10,5 @@ docx2txt
 pandas
 pypdf
 tiktoken
+langchain-text-splitters
+
