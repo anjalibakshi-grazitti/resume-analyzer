@@ -1,8 +1,8 @@
 streamlit>=1.35
 openai>=1.30
-langchain==0.1.16
-langchain-community>=0.2
-langchain-openai>=0.1
+langchain
+langchain-community
+langchain-openai
 python-dotenv
 faiss-cpu
 pdfminer.six
@@ -11,5 +11,6 @@ pandas
 pypdf
 tiktoken
 langchain-text-splitters
+
 
 
