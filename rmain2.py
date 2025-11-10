@@ -2,15 +2,13 @@ import streamlit as st
 import os
 from dotenv import load_dotenv
 from openai import OpenAI
+
+# LangChain imports (new structure)
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
-
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-
-from langchain_openai import OpenAIEmbeddings
-
-from langchain.chains import RetrievalQA
+from langchain.chains.retrieval_qa.base import RetrievalQA  # ✅ fixed import
 
 import json
 from typing import Dict, List, Any
@@ -18,6 +16,7 @@ import pandas as pd
 import re
 from datetime import datetime
 from pdfminer.high_level import extract_text
+
 
 load_dotenv()
 
@@ -559,6 +558,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
