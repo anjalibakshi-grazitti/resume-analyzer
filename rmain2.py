@@ -10,8 +10,8 @@ import re
 from datetime import datetime
 from pdfminer.high_level import extract_text
 
-# LangChain (updated structure)
-from langchain.embeddings.openai import OpenAIEmbeddings
+from langchain.embeddings import OpenAIEmbeddings
+
 from langchain.chat_models import ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
@@ -566,3 +566,4 @@ if __name__ == "__main__":
 
 
  
+
