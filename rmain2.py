@@ -132,7 +132,7 @@ def create_retriever(docs):
 
 def generate_feedback(resume_vectorstore, job_description_text, resume_name):
     retriever = resume_vectorstore.as_retriever(search_kwargs={"k": 5})
-    llm = ChatOpenAI(model="gpt-4o", temperature=0.1)
+    llm = ChatOpenAI(model="gpt-4", temperature=0.1)
 
     prompt = f"""
 You are an expert HR professional and career advisor with 15+ years of experience in technical recruitment. 
@@ -566,4 +566,5 @@ if __name__ == "__main__":
 
 
  
+
 
