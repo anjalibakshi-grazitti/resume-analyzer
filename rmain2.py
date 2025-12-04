@@ -2,13 +2,14 @@
 import streamlit as st
 import os
 from dotenv import load_dotenv
-from openai import OpenAI
+
 import json
 from typing import Dict, List, Any
 import pandas as pd
 import re
 from datetime import datetime
 from pdfminer.high_level import extract_text
+from langchain_openai import ChatOpenAI
 
 from langchain_community.embeddings import OpenAIEmbeddings
 
@@ -567,6 +568,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
