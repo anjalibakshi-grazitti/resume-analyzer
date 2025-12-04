@@ -11,13 +11,11 @@ from datetime import datetime
 from pdfminer.high_level import extract_text
 from langchain_openai import ChatOpenAI
 
-from langchain_community.embeddings import OpenAIEmbeddings
-
-
-from langchain.chat_models import ChatOpenAI
+from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.vectorstores import FAISS
+
 from langchain.chains import RetrievalQA
 
 import json
@@ -134,7 +132,7 @@ def create_retriever(docs):
 
 def generate_feedback(resume_vectorstore, job_description_text, resume_name):
     retriever = resume_vectorstore.as_retriever(search_kwargs={"k": 5})
-    llm = ChatOpenAI(model="gpt-4", temperature=0.1)
+    llm = ChatOpenAI(model_name="gpt-4", temperature=0.1)
 
     prompt = f"""
 You are an expert HR professional and career advisor with 15+ years of experience in technical recruitment. 
@@ -568,6 +566,7 @@ if __name__ == "__main__":
 
 
  
+
 
 
 
