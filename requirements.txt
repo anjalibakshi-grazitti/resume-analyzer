@@ -1,18 +1,16 @@
+streamlit==1.39.0
+langchain==0.2.12
+langchain-core==0.2.26
+langchain-community==0.2.10
+langchain-openai==0.1.19
 
-langchain-community>=0.3
-python-dotenv
-faiss-cpu
-pdfminer.six
-docx2txt
-pandas
-pypdf
-tiktoken
+openai==1.55.0
 
-streamlit==1.52.0
-openai>=1.30
-langchain==1.1.0          # pinned to the available version
-pandas>=2.0
-numpy>=1.26
-python-docx>=0.8.11
-python-multipart>=0.0.6
-tqdm>=4.0
+faiss-cpu==1.8.0.post1
+pdfminer.six==20231228
+docx2txt==0.8
+python-docx==1.1.2
+
+python-dotenv==1.0.1
+pandas==2.2.2
+numpy==1.26.4
