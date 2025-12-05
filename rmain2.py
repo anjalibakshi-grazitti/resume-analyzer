@@ -1,32 +1,20 @@
-# Standard
 import streamlit as st
 import os
 from dotenv import load_dotenv
-
-import json
-from typing import Dict, List, Any
-import pandas as pd
-import re
-from datetime import datetime
-from pdfminer.high_level import extract_text
-from langchain_openai import ChatOpenAI
-
-from langchain_community.embeddings import OpenAIEmbeddings
-
-
-from langchain.chat_models import ChatOpenAI
+from openai import OpenAI
+from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.document_loaders import PyPDFLoader, Docx2txtLoader, TextLoader
-from langchain.text_splitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
-from langchain.chains import RetrievalQA
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_classic.vectorstores import FAISS  # Changed: langchain-classic
+from langchain_classic.chains import RetrievalQA  # Changed: langchain-classic
 
 import json
-from typing import Dict, List, Any
+from typing import Dict, List, Optional, Any
 import pandas as pd
 import re
+import time
 from datetime import datetime
 from pdfminer.high_level import extract_text
-
 
 load_dotenv()
 
@@ -134,7 +122,7 @@ def create_retriever(docs):
 
 def generate_feedback(resume_vectorstore, job_description_text, resume_name):
     retriever = resume_vectorstore.as_retriever(search_kwargs={"k": 5})
-    llm = ChatOpenAI(model="gpt-4", temperature=0.1)
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.1)
 
     prompt = f"""
 You are an expert HR professional and career advisor with 15+ years of experience in technical recruitment. 
@@ -301,7 +289,7 @@ def parse_resume_to_json(resume_text: str) -> Dict[str, Any]:
     
     try:
         response = client.chat.completions.create(
-            model="gpt-4.1",
+            model="gpt-4",
             messages=[
                 {"role": "system", "content": "You are a resume parser that extracts structured information and returns it in JSON format."},
                 {"role": "user", "content": prompt}
@@ -568,9 +556,3 @@ if __name__ == "__main__":
 
 
  
-
-
-
-
-
-
