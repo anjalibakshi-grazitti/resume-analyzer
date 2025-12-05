@@ -4,9 +4,10 @@ langchain-classic
 pypdf
 python-docx
 yagmail
-pdfminer
+pdfminer.six
 python-dotenv
 langchain-community
 faiss-cpu
 langchain-openai
+
 
